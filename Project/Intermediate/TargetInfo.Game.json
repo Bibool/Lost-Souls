@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GCAA",
+			"Path": "G:\\adventure-repository\\GCAA\\Source\\GCAA.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GCAAEditor",
+			"Path": "G:\\adventure-repository\\GCAA\\Source\\GCAAEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

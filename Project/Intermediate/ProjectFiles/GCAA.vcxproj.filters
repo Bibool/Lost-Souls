@@ -1,0 +1,813 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GCAA.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{ABB77724-D092-4D9F-A983-4CA83CB6E5D5}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GCAAEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{940B8B04-5260-41C9-B880-82623B6B43E2}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GCAA">
+      <UniqueIdentifier>{4DECAFE4-C672-46EA-94D5-DCBA49A978E2}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\CGameMode.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\CGameMode.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\CHealthComponent.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\CHealthComponent.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\CMainPlayerController.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\CMainPlayerController.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\CPlayer.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\CPlayer.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\CPlayerInventory.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\CPlayerInventory.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\CPlayerJournal.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\CPlayerJournal.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\FCFireBallStatsStruct.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <None Include="..\..\Source\GCAA\GCAA.Build.cs">
+      <Filter>Source\GCAA</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GCAA\GCAA.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\GCAA.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\GCAACharacter.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\GCAACharacter.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\GCAAGameMode.cpp">
+      <Filter>Source\GCAA</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\GCAAGameMode.h">
+      <Filter>Source\GCAA</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\GCAA\old UI stuff.txt">
+      <Filter>Source\GCAA</Filter>
+    </None>
+    <None Include="..\..\Source\GCAA\OLD_TARGETLOCK.txt">
+      <Filter>Source\GCAA</Filter>
+    </None>
+    <Filter Include="Source\GCAA\AnimNotifies">
+      <UniqueIdentifier>{8510C057-091B-4962-B423-219EDFD10A51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\GCAA\AnimNotifies\Spells">
+      <UniqueIdentifier>{2969001C-4221-45FA-A12A-838DBCEF2ADA}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\AnimNotifies\Spells\BasicSpellCastNotify.cpp">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\AnimNotifies\Spells\BasicSpellCastNotify.h">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\AnimNotifies\Spells\FireballCastNotify.cpp">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\AnimNotifies\Spells\FireballCastNotify.h">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\AnimNotifies\Spells\LightningCastNotify.cpp">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\AnimNotifies\Spells\LightningCastNotify.h">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\AnimNotifies\Spells\WindblastCastNotify.cpp">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\AnimNotifies\Spells\WindblastCastNotify.h">
+      <Filter>Source\GCAA\AnimNotifies\Spells</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Audio">
+      <UniqueIdentifier>{A9ECA878-15DB-44CC-9BD4-17DAD3D90981}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\Audio\Added blank txt.txt">
+      <Filter>Source\GCAA\Audio</Filter>
+    </None>
+    <Filter Include="Source\GCAA\Components">
+      <UniqueIdentifier>{E00C4B18-33D4-4EB4-A5EA-AE7AF2172D5B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\Components\DamageComponent.cpp">
+      <Filter>Source\GCAA\Components</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Components\DamageComponent.h">
+      <Filter>Source\GCAA\Components</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Deprecated">
+      <UniqueIdentifier>{EAD1CB01-EB1D-48E6-8B0E-FE8D4DFAE036}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FActorDistanceData.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FBlinkStatsStruct.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FCBasicSpellStatsStruct.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FCChainLightningStatsStruct.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FHealStatsStruct.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\Fireball.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Deprecated\Fireball.h">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FSpellIdentifierStruct.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\GCAA\Deprecated\FWindBlastStatsStruct.cpp">
+      <Filter>Source\GCAA\Deprecated</Filter>
+    </ClCompile>
+    <Filter Include="Source\GCAA\DynamicEnvironment">
+      <UniqueIdentifier>{E42F37E6-CA3E-4E20-9CC4-E6F0F8A7D6B9}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\DynamicEnvironment\Added blank txt.txt">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\Door.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\Door.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\DoorButton.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\DoorButton.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\EnvironmentController.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\EnvironmentController.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\EnvironmentItem.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\EnvironmentItem.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\Interactable.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\Interactable.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\InvisibleTriggerBox.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\InvisibleTriggerBox.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\Lever.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\Lever.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\MovingPlatform.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\MovingPlatform.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\NonStopMovingPlatform.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\NonStopMovingPlatform.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\PressurePlate.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\PressurePlate.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\DynamicEnvironment\PushableBlock.cpp">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\DynamicEnvironment\PushableBlock.h">
+      <Filter>Source\GCAA\DynamicEnvironment</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Enumerators">
+      <UniqueIdentifier>{CE3E59A7-1655-4693-9275-094533A33F86}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\Enumerators\ESpellType.cpp">
+      <Filter>Source\GCAA\Enumerators</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Enumerators\ESpellType.h">
+      <Filter>Source\GCAA\Enumerators</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Helpers">
+      <UniqueIdentifier>{15FD65FD-28CE-466E-86F5-2CAB75D14A2C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\Helpers\DebugHelpers.cpp">
+      <Filter>Source\GCAA\Helpers</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Helpers\DebugHelpers.h">
+      <Filter>Source\GCAA\Helpers</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Interactables">
+      <UniqueIdentifier>{E6FB56D1-3EAA-4D6F-B9A8-5BF7BF1949B6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\Interactables\Added blank txt.txt">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GCAA\Interactables\CJournalPickup.cpp">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Interactables\CJournalPickup.h">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\Interactables\CKeyPickup.cpp">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Interactables\CKeyPickup.h">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\Interactables\CPickup.cpp">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Interactables\CPickup.h">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\Interactables\CPickupContainer.cpp">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Interactables\CPickupContainer.h">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\Interactables\CPickupContainerLid.cpp">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Interactables\CPickupContainerLid.h">
+      <Filter>Source\GCAA\Interactables</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Interfaces">
+      <UniqueIdentifier>{95877E54-8736-4469-97F2-7AE6B943B057}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\Interfaces\DeathInterface.cpp">
+      <Filter>Source\GCAA\Interfaces</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\Interfaces\DeathInterface.h">
+      <Filter>Source\GCAA\Interfaces</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\NPC">
+      <UniqueIdentifier>{C016C56C-7AD6-408D-BFC0-E1271D66006D}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\NPC\Added blank txt.txt">
+      <Filter>Source\GCAA\NPC</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GCAA\NPC\AIBullet.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\AIBullet.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\AIMissile.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\AIMissile.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\AIProjectileBase.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\AIProjectileBase.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\NPC\aiTags.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\AttackNotifyState.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\AttackNotifyState.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\BaseAttack.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\BaseAttack.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\BaseNpc.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\BaseNpc.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\BaseNpcController.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\BaseNpcController.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\NPC\Blackboard_keys.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\CanNpcMove.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\CanNpcMove.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\CanNpcPatrol.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\CanNpcPatrol.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\ChangeToRunSpeed.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\ChangeToRunSpeed.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\ChangeToWalkSpeed.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\ChangeToWalkSpeed.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\ChasePlayer.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\ChasePlayer.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\ChooseAttackTask.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\ChooseAttackTask.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\CreateAndSetRandomPath.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\CreateAndSetRandomPath.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\ErosionEnemy.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\ErosionEnemy.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindAllyQueryContext.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindAllyQueryContext.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindChargeDistance.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindChargeDistance.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindEnemyQueryContext.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindEnemyQueryContext.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindPathPoint.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindPathPoint.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindPlayerLocation.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindPlayerLocation.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindRandomLocation.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindRandomLocation.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FindRotation.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FindRotation.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\FloatingAI.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\FloatingAI.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\HasHitObjectCharge.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\HasHitObjectCharge.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\IncrementPathIndex.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\IncrementPathIndex.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\IsNpcActive.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\IsNpcActive.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\IsPlayerInAttackRange.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\IsPlayerInAttackRange.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\MantleNpc.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\MantleNpc.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\MovingNpc.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\MovingNpc.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\NPCHealthBar.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\NPCHealthBar.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\NPCRangedSpell.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\NPCRangedSpell.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\PatrolPath.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\PatrolPath.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\Pyroxenes.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\Pyroxenes.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\PyroxenesExplosion.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\PyroxenesExplosion.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\RotateTo.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\RotateTo.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\StayAtADistance.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\StayAtADistance.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\StopInvestigating.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\StopInvestigating.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\TeleportEQS.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\TeleportEQS.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\TurretAIController.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\TurretAIController.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\NPC\TurretEnemy.cpp">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\NPC\TurretEnemy.h">
+      <Filter>Source\GCAA\NPC</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Player">
+      <UniqueIdentifier>{4A71050B-B553-4E38-8698-3D825F9508FC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\Player\Added blank txt.txt">
+      <Filter>Source\GCAA\Player</Filter>
+    </None>
+    <Filter Include="Source\GCAA\SaveSystem">
+      <UniqueIdentifier>{A2747CE4-5BC9-4DF0-B86E-D49A770D13F6}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\SaveSystem\Added blank txt.txt">
+      <Filter>Source\GCAA\SaveSystem</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GCAA\SaveSystem\SaveSystem.cpp">
+      <Filter>Source\GCAA\SaveSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SaveSystem\SaveSystem.h">
+      <Filter>Source\GCAA\SaveSystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\SoundSystem">
+      <UniqueIdentifier>{7DC16876-8FEE-4A50-B625-4C6DBDCCDD93}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\SoundSystem\SoundManager.cpp">
+      <Filter>Source\GCAA\SoundSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SoundSystem\SoundManager.h">
+      <Filter>Source\GCAA\SoundSystem</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\SpellManager">
+      <UniqueIdentifier>{3A972CEA-C9C8-4E2F-B14A-F99E14254B76}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\SpellManager.cpp">
+      <Filter>Source\GCAA\SpellManager</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\SpellManager.h">
+      <Filter>Source\GCAA\SpellManager</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\SpellManager\Spells">
+      <UniqueIdentifier>{D54A517A-D65F-417B-B060-4607A3961BE4}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\CBasicSpell.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\CBasicSpell.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\CBlink.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\CBlink.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\CChainLightning.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\CChainLightning.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\CFireBall.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\CFireBall.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\CHeal.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\CHeal.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\CWindblast.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\CWindblast.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\SpellManager\Spells\Spell.cpp">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\SpellManager\Spells\Spell.h">
+      <Filter>Source\GCAA\SpellManager\Spells</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Structures">
+      <UniqueIdentifier>{63407718-1E17-47F9-A598-7EDE2E210528}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FActorDistanceData.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FBlinkStatsStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FCBasicSpellStatsStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FCChainLightningStatsStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FCFireBallStatsStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FHealStatsStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FSpellIdentifierStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\GCAA\Structures\FWindBlastStatsStruct.h">
+      <Filter>Source\GCAA\Structures</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\Tools">
+      <UniqueIdentifier>{625319D7-0CE0-4EF2-9C4D-09CF2B36D0E8}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GCAA\Tools\Added blank txt.txt">
+      <Filter>Source\GCAA\Tools</Filter>
+    </None>
+    <Filter Include="Source\GCAA\UI">
+      <UniqueIdentifier>{F584250F-B1F5-4D42-B6A7-D387A5786633}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\UI\CreditMenuUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\CreditMenuUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\JournalItemUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\JournalItemUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\JournalMenuUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\JournalMenuUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\MessageToPlayerUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\MessageToPlayerUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\OptionsMenuUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\OptionsMenuUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\PauseMenuUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\PauseMenuUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\PlayerInventoryItemUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\PlayerInventoryItemUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\PlayerInventoryUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\PlayerInventoryUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\PlayerUI.cpp">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\PlayerUI.h">
+      <Filter>Source\GCAA\UI</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\UI\Health">
+      <UniqueIdentifier>{0BA7FA0D-1974-4F10-A29D-932FAD65265B}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\UI\Health\BaseHealthUI.cpp">
+      <Filter>Source\GCAA\UI\Health</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\Health\BaseHealthUI.h">
+      <Filter>Source\GCAA\UI\Health</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\UI\MainMenu">
+      <UniqueIdentifier>{DC5A2344-41B5-4945-B5DA-4AAF5AB6933D}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\UI\MainMenu\MainMenu.cpp">
+      <Filter>Source\GCAA\UI\MainMenu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\MainMenu\MainMenu.h">
+      <Filter>Source\GCAA\UI\MainMenu</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\MainMenu\MainMenuGameMode.cpp">
+      <Filter>Source\GCAA\UI\MainMenu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\MainMenu\MainMenuGameMode.h">
+      <Filter>Source\GCAA\UI\MainMenu</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\UI\MainMenu\OldMainMenu">
+      <UniqueIdentifier>{953E737E-E3F1-4EBF-8BD0-851221998E0E}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\UI\MainMenu\OldMainMenu\MainMenuPlayerController.cpp">
+      <Filter>Source\GCAA\UI\MainMenu\OldMainMenu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\MainMenu\OldMainMenu\MainMenuPlayerController.h">
+      <Filter>Source\GCAA\UI\MainMenu\OldMainMenu</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\MainMenu\OldMainMenu\MenuHUD.cpp">
+      <Filter>Source\GCAA\UI\MainMenu\OldMainMenu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\MainMenu\OldMainMenu\MenuHUD.h">
+      <Filter>Source\GCAA\UI\MainMenu\OldMainMenu</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UI\MainMenu\OldMainMenu\SMainMenuWidget.cpp">
+      <Filter>Source\GCAA\UI\MainMenu\OldMainMenu</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UI\MainMenu\OldMainMenu\SMainMenuWidget.h">
+      <Filter>Source\GCAA\UI\MainMenu\OldMainMenu</Filter>
+    </ClInclude>
+    <Filter Include="Source\GCAA\UpgradeSystem">
+      <UniqueIdentifier>{B4D3BA47-176C-4105-A8E6-A5E28CCD37BE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\GCAA\UpgradeSystem\CLevelTransition.cpp">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UpgradeSystem\CLevelTransition.h">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemController.cpp">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemController.h">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemHUD.cpp">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemHUD.h">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemWidget.cpp">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemWidget.h">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemWidgetSlate.cpp">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GCAA\UpgradeSystem\UpgradeSystemWidgetSlate.h">
+      <Filter>Source\GCAA\UpgradeSystem</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

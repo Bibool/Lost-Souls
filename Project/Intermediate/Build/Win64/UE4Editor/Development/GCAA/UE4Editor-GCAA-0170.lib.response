@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-GCAA-0170.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"G:\adventure-repository\GCAA\Intermediate\Build\Win64\GCAAEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"G:\adventure-repository\GCAA\Intermediate\Build\Win64\UE4Editor\Development\GCAA\CPlayer.cpp.obj"
+"G:\adventure-repository\GCAA\Intermediate\Build\Win64\UE4Editor\Development\GCAA\CBlink.cpp.obj"
+"G:\adventure-repository\GCAA\Intermediate\Build\Win64\UE4Editor\Development\GCAA\Module.GCAA.cpp.obj"
+"G:\adventure-repository\GCAA\Intermediate\Build\Win64\UE4Editor\Development\GCAA\Module.GCAA.gen.cpp.obj"
+"G:\adventure-repository\GCAA\Intermediate\Build\Win64\UE4Editor\Development\GCAA\Default.rc2.res"
+/OUT:"G:\adventure-repository\GCAA\Intermediate\Build\Win64\UE4Editor\Development\GCAA\UE4Editor-GCAA-0170.lib"
+/INCLUDE:IMPLEMENT_MODULE_GCAA

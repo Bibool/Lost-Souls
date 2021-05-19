@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"G:\\adventure-repository\\GCAA\\Source\\GCAA\\GCAA.Build.cs",
+		"G:\\adventure-repository\\GCAA\\Source\\GCAA.Target.cs",
+		"G:\\adventure-repository\\GCAA\\Source\\GCAAEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}
