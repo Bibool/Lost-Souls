@@ -13,7 +13,11 @@ The team includes the following:
   
   Find the attribution table here:
   
-  https://docs.google.com/spreadsheets/d/1YtsSB9KxJoQvwXXxXClPq4_hJvZ72wbi/edit?usp=drive_web&ouid=105863881263652035668&rtpof=true
+  https://docs.google.com/spreadsheets/d/1YtsSB9KxJoQvwXXxXClPq4_hJvZ72wbi/
+  
+  To build the project, it will require this additional file to be placed in Content/movies:
+  
+  https://drive.google.com/file/d/1k5th9mKBbrKG74243zj76ahq-8a58Bll/
   
   
  Designers:
