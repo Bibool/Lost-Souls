@@ -1,8 +1,7 @@
 ![Lost Souls](https://static.wixstatic.com/media/8be4d7_44bb3de28db543f3a0b0273ac78121ff~mv2.png/v1/fill/w_528,h_353,al_c,q_85,usm_0.66_1.00_0.01/LSV3.webp)
 
-*An action adventure game created by GamerCamp AA Team in UE4.26.3 using C++.*
+*An action adventure game created by -GamerCamp AA Team- in UE4.26.3 using C++.*
 
-The GamerCamp Action Adventure team created this game in Unreal Engine 4 using C++.
 
 The team includes the following:
 
