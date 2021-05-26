@@ -19,7 +19,7 @@
 
 class ACPlayer;
 
-DECLARE_DELEGATE_OneParam(FShakeDelegate, float);
+DECLARE_DELEGATE_OneParam(fShakeDelegate, float);
 
 UCLASS()
 class GCAA_API AAIMissile : public AActor
@@ -27,16 +27,6 @@ class GCAA_API AAIMissile : public AActor
 	GENERATED_BODY()
 
 private:
-	// Target Variables - These will allow us to set up where exactly it is we want the Missiles to go when they spawn
-	bool			bHasTargetPosition;
-	bool			bHasNoTarget;
-
-	class AActor*	Target;
-
-	// Delay Variables - So the Missiles shoot up initially before making an arc towards the Player
-	float			fDelayTimer;
-	bool			bHasFinishedDelay;
-
 	// Missiles lifetime Variables
 	float			fLifetimeCountdown;
 	bool			bCanBeDestroyed;
@@ -56,9 +46,6 @@ private:
 	float			fDecalPositionZ;
 
 	FTimerHandle	DecalTimer;
-
-	// Players current location
-	//FVector			playerLocation;
 
 	// Function to set the collision
 	UFUNCTION()
@@ -93,14 +80,8 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	void	DelayLogic(float deltaTime);
-
-	void	FindPlayer();
-	void	UpdateTarget();
-
 	// Sphere collision component
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Collision", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision")
 	class USphereComponent*				CollisionComponent;
 
 	// Static Mesh Component
@@ -109,16 +90,13 @@ public:
 
 	// Projectile Movement Component
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Movement")
 	class UProjectileMovementComponent* ProjectileMovement;
 
 	// Particle system
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particles", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Particles")
 	class UParticleSystemComponent*		MissileParticles;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particles", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(EditDefaultsOnly, Category = "Particles")
 	class UParticleSystem*				ExplosionSystem;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Audio")
@@ -133,8 +111,4 @@ public:
 	class UAudioComponent*				PlayExplosionSound(class USoundBase* sound);
 
 	class UParticleSystemComponent*		PlayExplosion(class UParticleSystem* explosion);
-
-	// Getters and Setters for the FindPlayerLocation task in Behaviour Tree
-	//FVector getTargetLocation() { return playerLocation; }
-	//void setTargetLocation(FVector i) { playerLocation = i; }
 };

@@ -1,14 +1,19 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									MSc Video Game Development :: Mehak Hussain											 //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									            -ABOUT SNIPERATTACK-														//
+// + This task was made for the Erosion Enemy and its Sniper Attack.														//
+// + It is used within the Behaviour Tree.																					//
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
-#include "CoreMinimal.h"
 #include "BehaviorTree/Tasks/BTTask_BlackboardBase.h"
+#include "CoreMinimal.h"
 #include "SniperAttack.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class GCAA_API USniperAttack : public UBTTask_BlackboardBase
 {
@@ -16,7 +21,6 @@ class GCAA_API USniperAttack : public UBTTask_BlackboardBase
 	
 public:
 
-	USniperAttack(FObjectInitializer const& object_initailizer);
+	USniperAttack(FObjectInitializer const& object_initializer);
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
-
 };

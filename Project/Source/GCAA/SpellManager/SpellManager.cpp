@@ -141,7 +141,7 @@ void ASpellManager::GetFromPool(ESpellType eType)
 	for (auto spell : m_apcSpellPool)
 	{
 		switch (eType)
-		{
+		{	
 		case ESpellType::Default:
 			{
 				if (spell && spell->GetCanPoolUse() && spell->GetSpellType() == ESpellType::Default )

@@ -40,7 +40,7 @@ void APyroxenes::BaseAttack()
 		SpawnTransform.SetLocation(GetActorForwardVector() + GetActorLocation());
 
 		FActorSpawnParameters SpawnParams;
-		SpawnParams.Instigator;
+		//SpawnParams.Instigator;
 
 		GetWorld()->SpawnActor <APyroxenesExplosion>(Explosion, SpawnTransform, SpawnParams);
 		ABaseNpc::BaseAttack();

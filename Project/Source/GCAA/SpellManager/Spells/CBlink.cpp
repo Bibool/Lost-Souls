@@ -66,21 +66,20 @@ void ACBlink::PlayFromReverse()
 
 void ACBlink::Blink()
 {
-	bool bTriedToblink = true;
+	bool bTriedToBlink = true;
 
 	if (m_iBlinkCharges != 0)
 	{	
-		bTriedToblink = AttemptTeleport();
+		bTriedToBlink = AttemptTeleport();
 	}	
 	else
 	{
 		BlinkFail();
 	}
 	
-	if ( !bTriedToblink )
+	if ( !bTriedToBlink )
 	{
 		BlinkFail();
-		UE_LOG( LogTemp, Warning, TEXT( "Teleport Failed." ) );
 	}			
 }
 
@@ -206,12 +205,11 @@ bool ACBlink::TraceToTeleportTarget_Player()
 
 bool ACBlink::TeleportToLocation()
 {
-	bool bCouldTeleport = false;
 	const FVector v3TeleportLocation = m_v3ProjectedLocation - (FVector( mpcPlayer->GetFollowCamera()->GetRelativeLocation().X, mpcPlayer->GetFollowCamera()->GetRelativeLocation().Y, 0 ));
 
 	m_sTimelineForward.PlayFromStart();
 	GetWorldTimerManager().SetTimer( m_sTimer, this, &ACBlink::DelayedAction, m_sSpellStats.Delay_Before_Blink, false );	
-	bCouldTeleport = mpcPlayer->TeleportTo( v3TeleportLocation, mpcPlayer->GetActorRotation()  );
+	const bool bCouldTeleport = mpcPlayer->TeleportTo( v3TeleportLocation, mpcPlayer->GetActorRotation()  );
 
 	if (bCouldTeleport)
 	{
@@ -400,17 +398,15 @@ bool ACBlink::IsLedgeInReach(SLedgeData sLedgeData)
 
 bool ACBlink::AttemptTeleport()
 {
-	bool bTeleportSuccess = false;
+	bool bTeleportSuccess;
 	
 	if (!m_bCanScaleWall)
 	{
-		bTeleportSuccess= mpcPlayer->TeleportTo( m_v3BlinkLocation, mpcPlayer->GetActorRotation() );
-		if ( m_sSpellStats.VFX_Blink_Start) const UParticleSystemComponent* pHitFX = UGameplayStatics::SpawnEmitterAtLocation( GetWorld(), m_sSpellStats.VFX_Blink_Start, GetActorLocation(), FRotator::ZeroRotator, FVector(1,1,1), true );
+		bTeleportSuccess = mpcPlayer->TeleportTo( m_v3BlinkLocation, mpcPlayer->GetActorRotation() );
+		if ( m_sSpellStats.VFX_Blink_Start) UGameplayStatics::SpawnEmitterAtLocation( GetWorld(), m_sSpellStats.VFX_Blink_Start, GetActorLocation(), FRotator::ZeroRotator, FVector(1,1,1), true );
 
 		if (bTeleportSuccess)
 		{
-			UE_LOG( LogTemp, Warning, TEXT( "Wall teleport success." ) );
-			
 			BlinkExtraLogic();
 		}
 	}
@@ -420,8 +416,6 @@ bool ACBlink::AttemptTeleport()
 
 		if (bTeleportSuccess)
 		{
-			UE_LOG( LogTemp, Warning, TEXT( "Distance teleport success." ) );
-			
 			BlinkExtraLogic();
 		}
 	}
@@ -430,9 +424,7 @@ bool ACBlink::AttemptTeleport()
 }
 
 void ACBlink::BlinkExtraLogic()
-{
-
-	
+{	
 	m_sTimelineForward.PlayFromStart();
 	GetWorldTimerManager().SetTimer( m_sTimer, this, &ACBlink::DelayedAction, m_sSpellStats.Delay_Before_Blink, false );
 	m_iBlinkCharges--;

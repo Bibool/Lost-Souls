@@ -1,4 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									MSc Video Game Development :: Mehak Hussain											 //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
@@ -6,9 +8,6 @@
 #include "GameFramework/HUD.h"
 #include "MenuHUD.generated.h"
 
-/**
- *
- */
 UCLASS()
 class GCAA_API AMenuHUD : public AHUD
 {
@@ -20,7 +19,6 @@ protected:
 	TSharedPtr<class SWidget> MainMenuWidgetContainer;
 
 	virtual void BeginPlay() override;
-
 public:
 
 	void ShowMenu();

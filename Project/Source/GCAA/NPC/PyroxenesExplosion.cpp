@@ -21,7 +21,7 @@ APyroxenesExplosion::APyroxenesExplosion()
 	damageAmount = 10;
 	if (ExplosionRadius)
 	{
-		float const radius();
+		//float const radius();
 		ExplosionRadius->SetSphereRadius(10.0f, false);		
 	}
 	RootComponent = ExplosionRadius;

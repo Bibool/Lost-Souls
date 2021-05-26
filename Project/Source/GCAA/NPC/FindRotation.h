@@ -1,4 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									MSc Video Game Development :: Mehak Hussain											 //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									          -ABOUT FINDROTATION-														 //
+// + This task was made for the Erosion Enemy to help the enemy locate the Player using its Sniper Laser. 				 //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
@@ -6,14 +13,12 @@
 #include "BehaviorTree/Tasks/BTTask_BlackboardBase.h"
 #include "FindRotation.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class GCAA_API UFindRotation : public UBTTask_BlackboardBase
 {
 	GENERATED_BODY()
 public:
-	UFindRotation(FObjectInitializer const& object_initailizer);
+
+	UFindRotation(FObjectInitializer const& object_initializer);
 	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 };

@@ -524,6 +524,7 @@ void ACPlayer::LineTrace()
 
 	FHitResult HitResults;
 	GetWorld()->LineTraceSingleByChannel( HitResults, CurrentCameraPos, m_v3DepthLocation, ECC_Visibility );
+	DrawDebugLine( GetWorld(), CurrentCameraPos, m_v3DepthLocation, FColor::Red, false, 0.3f);
 }
 
 
@@ -1192,10 +1193,12 @@ void ACPlayer::AcquireTargets()
 	if ( !m_bLockedOn )
 	{
 		BeginLock();
+		DEBUGLOG("LOCKED ON")
 	}
 	else
 	{
 		EndLock();
+		DEBUGLOG("LOCKED OFF")
 	}
 }
 
@@ -1203,9 +1206,9 @@ void ACPlayer::EndLock()
 {
 	m_bLockedOn = false;
 	bUseControllerRotationYaw = false;
-
 	GetCharacterMovement()->bUseControllerDesiredRotation = false;
 	GetCharacterMovement()->bOrientRotationToMovement = true;
+	m_pcCurrentTarget = nullptr;
 }
 
 void ACPlayer::BeginLock()
@@ -1213,7 +1216,7 @@ void ACPlayer::BeginLock()
 	m_bLockedOn = true;
 	bUseControllerRotationYaw = true;
 	GetCharacterMovement()->bUseControllerDesiredRotation = true;
-	GetCharacterMovement()->bOrientRotationToMovement = false;		
+	GetCharacterMovement()->bOrientRotationToMovement = false;
 }
 
 
@@ -1322,12 +1325,12 @@ void ACPlayer::GetTarget( bool bSeekLeft)
 				}
 
 				// We calculate the DotProduct of the currently targeted NPC against this iterated actor.
-				const FVector	SubtractedVector = m_pcCurrentTarget->GetActorLocation() - actor->GetActorLocation();
-				const FVector	NormalizedVector = SubtractedVector.GetSafeNormal();
-				const float		DotProduct = UKismetMathLibrary::Dot_VectorVector(m_pcCurrentTarget->GetActorRightVector() * fDirection, NormalizedVector );
+				const FVector	kv3SubtractedVector = m_pcCurrentTarget->GetActorLocation() - actor->GetActorLocation();
+				const FVector	kv3NormalizedVector = kv3SubtractedVector.GetSafeNormal();
+				const float		kfDotProduct = UKismetMathLibrary::Dot_VectorVector(m_pcCurrentTarget->GetActorRightVector() * fDirection, kv3NormalizedVector );
 
 				// Is it on it's side?
-				if (DotProduct > 0.f)
+				if (kfDotProduct > 0.f)
 				{
 					// Then add it to an array of valid actors.
 					acValidTargets.Add( actor );

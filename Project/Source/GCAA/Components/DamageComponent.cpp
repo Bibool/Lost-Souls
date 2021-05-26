@@ -82,7 +82,7 @@ void UDamageComponent::ReceiveDamage(AActor* DamagingActor)
 	}
 }
 
-void UDamageComponent::ReceiveDamage( float Damage) 
+void UDamageComponent::ReceiveDamage( float Damage ) 
 {
 	if ( !m_bIsInvuln )
 	{

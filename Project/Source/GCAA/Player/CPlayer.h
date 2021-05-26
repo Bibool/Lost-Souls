@@ -233,7 +233,7 @@ protected:
 	 */
 	void LookUpAtRate( float Rate );
 	
-	void Interact ();
+	
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent( class UInputComponent* PlayerInputComponent ) override;
@@ -313,7 +313,29 @@ public:
 	* @param eSpellType The spell to query the current cooldown.
 	*/
 	SReturnData GetAbilityCoolDown( ESpellType eSpellType ) const;
-#pragma endregion 
+#pragma endregion
+#pragma region BlueprintCallableFunctions
+	// This is the event that checks whether or not the player is holding down the key.
+	UFUNCTION( BlueprintCallable)
+	void AutoAttackAxisEvent( float fValue );
+	UFUNCTION( BlueprintCallable)
+	void Ability1AxisEvent	( float fValue );
+	UFUNCTION( BlueprintCallable)
+	void Ability2AxisEvent	( float fValue );
+	UFUNCTION( BlueprintCallable)
+	void Ability3AxisEvent	( float fValue );
+	UFUNCTION( BlueprintCallable)
+	void Ability4AxisEvent	( float fValue );
+	UFUNCTION( BlueprintCallable)
+	void HealAxisEvent		( float fValue );
+	UFUNCTION( BlueprintCallable)
+	void Interact ();
+	UFUNCTION( BlueprintCallable)
+	void AcquireTargets();
+	UFUNCTION( BlueprintCallable)
+	void PauseGameAndDisplayOptionsMenu ();
+	
+#pragma endregion
 	
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -370,7 +392,7 @@ private:
 
 	// Called to pause the game
 	void PauseGame ();
-	void PauseGameAndDisplayOptionsMenu ();
+	//void PauseGameAndDisplayOptionsMenu ();
 	void PauseGameAndDisplayJournalMenu (int iJournalPageToDisplay);
 	bool bGameIsPaused;
 
@@ -502,14 +524,6 @@ private:
 	bool m_bIsAbility3OnCD	;
 	bool m_bIsAbility4OnCD	;
 
-	// This is the event that checks whether or not the player is holding down the key.
-	void AutoAttackAxisEvent( float fValue );
-	void Ability1AxisEvent	( float fValue );
-	void Ability2AxisEvent	( float fValue );
-	void Ability3AxisEvent	( float fValue );
-	void Ability4AxisEvent	( float fValue );
-	void HealAxisEvent		( float fValue );
-
 	// And this is the event that the timer will trigger ever x seconds. This is where we really request the wanted spell.
 	void AutoAttackCoolDownDelegateTimer()  ;
 	void Ability1CoolDownDelegateTimer()	;
@@ -559,7 +573,7 @@ private:
 	/** Fired when target lock is pressed.
 	 * Will find the nearest target to the player and follow it.
 	 */ 
-	void AcquireTargets();
+	//void AcquireTargets();
 	/** If target locked and looking for find left target is pressed.
 	 * Will attempt to lock to a target left to the current target.
 	 */

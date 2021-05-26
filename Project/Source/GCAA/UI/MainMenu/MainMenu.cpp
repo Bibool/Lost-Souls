@@ -1,5 +1,6 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//									MSc Video Game Development :: Mehak Hussain											 //
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include "MainMenu.h"
 #include "Components/Button.h"
@@ -17,8 +18,6 @@ void UMainMenu::NativeConstruct()
 		QuitBtn->OnClicked.AddDynamic(this, &UMainMenu::OnQuitClicked);
 	}
 }
-
-
 
 void UMainMenu::OnPlayClicked()
 {

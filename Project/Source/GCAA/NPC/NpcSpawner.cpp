@@ -25,7 +25,7 @@ void ANpcSpawner::BeginPlay()
 {
 	wavesRemaining = numOfWaves;
 	
-	if (SpawnOnBeginPlay)
+	if (SpawnOnBeginPlay) //if true will spawn a wave as soon as the game has begun.
 	{
 		spawnWave();
 	}
@@ -33,6 +33,11 @@ void ANpcSpawner::BeginPlay()
 	
 }
 
+//this function spawns the wave going through an if statement to make sure waves are available
+//It then does a for loop with the amount of enemies spawning in this wave and spawns them in a navigable radius to make sure they cannot be spawned outside the map
+//it then sets the enemy alive counter up by 1
+//To Spawn an NPC it gets one of the NPCs added into the array from the blueprint editor
+//Once it has finished spawning all the NPCs it then sets the waveSpawned to be true and sets the Number of enemies to the num of enemies + wave increase amount
 void ANpcSpawner::spawnWave()
 {
 	if (wavesRemaining > 0)
@@ -46,8 +51,6 @@ void ANpcSpawner::spawnWave()
 			if (UNavigationSystemV1* const NavSys = UNavigationSystemV1::GetCurrent(GetWorld()))
 			{
 				FNavLocation Loc;
-
-				int j = i;
 				//gets the player character
 				if (ACharacter* const player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0))
 
@@ -55,19 +58,11 @@ void ANpcSpawner::spawnWave()
 					if (NavSys->GetRandomPointInNavigableRadius(GetActorLocation(), spawnRadius, Loc, nullptr))
 					{
 						enemiesAlive++;
-
-						//if(j == BaseNPCClass.Num())
-						//{
-						//	j = 0;
-						//}
-						//BaseNPC == Cast<ABaseNpc>(BaseNPCClass[j]);
-						//BaseNPC == new Cast<ABaseNpc>(BaseNPCClass[FMath::RandRange(0, BaseNPCClass.Num())]);
 						FActorSpawnParameters SpawnParams;
-						SpawnParams.Instigator;
+						//SpawnParams.Instigator;
 						FTransform SpawnTransform = GetActorTransform();
 						SpawnTransform.SetLocation(Loc.Location);
 						int numNpc = BaseNPCClass.Num();
-						//GetWorld()->SpawnActor<ABaseNpc>(BaseNPCClass[j], SpawnTransform, SpawnParams);
 
 						auto NpcActor = Cast<ABaseNpc>(UGameplayStatics::BeginDeferredActorSpawnFromClass
 						(this, BaseNPCClass[FMath::RandRange(0, numNpc - 1)], SpawnTransform));
@@ -77,7 +72,6 @@ void ANpcSpawner::spawnWave()
 							NpcActor->setSpawner(this);
 							UGameplayStatics::FinishSpawningActor(NpcActor, SpawnTransform);
 						}
-						//GetWorld()->SpawnActor<ABaseNpc>(baseNpc, SpawnTransform, SpawnParams);
 
 					}
 				}
@@ -90,12 +84,8 @@ void ANpcSpawner::spawnWave()
 	}
 }
 
-void ANpcSpawner::onNpcDeath()
-{
 
-}
-
-void ANpcSpawner::setenemiesAlive(int i)
+void ANpcSpawner::setEnemiesAlive(int i)
 {
 	enemiesAlive = i;
 }
@@ -105,6 +95,10 @@ int ANpcSpawner::getEnemiesAlive()
 	return enemiesAlive;
 }
 
+//This function checks if the enemies alive are equal to 0 and makes sure the wave spawned is set to true
+//If these conditions  are met it will then set the waves remaining to be one less
+//If no waves are remaining it will check for a door actor and if it finds one it will then call the
+//override doorlock function and set it to true unlocking a door if needed
 void ANpcSpawner::checkIfnextWave()
 {
 	if (enemiesAlive == 0 && waveSpawned == true)
@@ -121,18 +115,12 @@ void ANpcSpawner::checkIfnextWave()
 			}
 		}
 		spawnWave();
-		//waveSpawned = false;
-		GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::FromInt(wavesRemaining));
-		GEngine->AddOnScreenDebugMessage(-1, GetWorld()->GetDeltaSeconds(), FColor::Orange, FString::FromInt(enemiesAlive));
 	}
 }
 
 // Called every frame
 void ANpcSpawner::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-
-	
-	
+	Super::Tick(DeltaTime);	
 }
 

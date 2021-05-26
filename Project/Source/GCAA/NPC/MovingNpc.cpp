@@ -47,7 +47,7 @@ void AMovingNpc::BeginPlay()
 		PatrolPath = GetWorld()->SpawnActor<APatrolPath>(PatrolPathClass, this->GetActorLocation(), FRotator::ZeroRotator, params);
 		//PatrolPath = Cast<APatrolPath>(PatrolPathClass);
 		PatrolPath->SpawnRandomPath(numOfPatrolPoints, pathSpawnRadius);
-		PatrolPath = PatrolPath;
+		//PatrolPath = PatrolPath;
 
 	}
 
@@ -58,7 +58,7 @@ void AMovingNpc::BeginPlay()
 		PatrolPath = GetWorld()->SpawnActor<APatrolPath>(PatrolPathClass, this->GetActorLocation(), FRotator::ZeroRotator, params);
 		//PatrolPath = Cast<APatrolPath>(PatrolPathClass);
 		PatrolPath->SpawnRandomPath(2, 1500.0f);
-		PatrolPath = PatrolPath;
+		//PatrolPath = PatrolPath;
 	}
 
 }
@@ -82,7 +82,7 @@ void AMovingNpc::VOnDeath()
 	
 	if (npcSpawner)
 	{
-		npcSpawner->setenemiesAlive(npcSpawner->getEnemiesAlive() - 1);
+		npcSpawner->setEnemiesAlive(npcSpawner->getEnemiesAlive() - 1);
 		npcSpawner->checkIfnextWave();
 	}
 	AController* CurrentController = GetController();
@@ -104,11 +104,13 @@ TSubclassOf<APatrolPath> AMovingNpc::getPatrolPathClass()
 	return PatrolPathClass;
 }
 
+//Returns the walk speed used in the behaviour tree
 float AMovingNpc::getWalkSpeed() const
 {
 	return walkSpeed;
 }
 
+//Returns the run speed, used in the behaviour tree
 float AMovingNpc::getRunSpeed() const
 {
 	return runSpeed;
@@ -129,14 +131,14 @@ bool AMovingNpc::getSpawnRandomPath()
 {
 	return spawnRandomPath;
 }
-
+//Stops all actions and sets the moveSpeed to 0.
 void AMovingNpc::StopActions()
 {
 	GetCharacterMovement()->MaxWalkSpeed = 0.0f;
 	ABaseNpc::StopActions();
 
 }
-
+//Allows actions to continue resetting the moveSpeed
 void AMovingNpc::AllowActions()
 {
 	GetCharacterMovement()->MaxWalkSpeed = walkSpeed;

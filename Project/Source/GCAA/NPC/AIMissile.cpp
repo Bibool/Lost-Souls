@@ -55,17 +55,17 @@ AAIMissile::AAIMissile(const FObjectInitializer& ObjectInitializer)
 
 	// Set Default Values for Variables
 	fDamageAmount		 = 10.0f;
-	fDelayTimer			 = 0.f;
-	fLifetimeCountdown	 = 15.f;
+	//fDelayTimer			 = 0.f;
+	//fLifetimeCountdown	 = 15.f;
 	fShakeRadius		 = 200.0f;
 	fDecalPositionZ		 = 500.0f;
 	fUpwardsLaunchAmount = 1000.0f;
-	bHasFinishedDelay	 = false;
-	bHasTargetPosition	 = false;
-	bHasNoTarget		 = false;
-	bCanBeDestroyed		 = false;
-	PlayerInWorld		 = NULL;
-	Target				 = NULL;
+	//bHasFinishedDelay	 = false;
+	//bHasTargetPosition	 = false;
+	//bHasNoTarget		 = false;
+	//bCanBeDestroyed		 = false;
+	//PlayerInWorld		 = NULL;
+	//Target				 = NULL;
 	//playerLocation	 = FVector(0, 0, 0);
 }
 
@@ -90,30 +90,30 @@ void AAIMissile::BeginPlay()
 	//}
 }
 
-void AAIMissile::FindPlayer()
-{
-	//class UWorld* const world = GetWorld();
-
-	//if( world )
-	//{
-	//	for( TActorIterator<ACPlayer> ObstacleItr(world); ObstacleItr; ++ObstacleItr )
-	//	{
-	//		FName PlayerTagName = FName(TEXT("Player"));
-	//		class ACPlayer* TargetFound = *ObstacleItr;
-
-	//		if( TargetFound != nullptr )
-	//		{
-	//			if( TargetFound->ActorHasTag(PlayerTagName) )
-	//			{
-	//				if( PlayerInWorld != TargetFound )
-	//				{
-	//					PlayerInWorld = TargetFound;
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-}
+//void AAIMissile::FindPlayer()
+//{
+//	//class UWorld* const world = GetWorld();
+//
+//	//if( world )
+//	//{
+//	//	for( TActorIterator<ACPlayer> ObstacleItr(world); ObstacleItr; ++ObstacleItr )
+//	//	{
+//	//		FName PlayerTagName = FName(TEXT("Player"));
+//	//		class ACPlayer* TargetFound = *ObstacleItr;
+//
+//	//		if( TargetFound != nullptr )
+//	//		{
+//	//			if( TargetFound->ActorHasTag(PlayerTagName) )
+//	//			{
+//	//				if( PlayerInWorld != TargetFound )
+//	//				{
+//	//					PlayerInWorld = TargetFound;
+//	//				}
+//	//			}
+//	//		}
+//	//	}
+//	//}
+//}
 
 // Called every frame
 void AAIMissile::Tick(float DeltaTime)
@@ -211,57 +211,57 @@ void AAIMissile::OnOverlapBegin(UPrimitiveComponent* overlappedComp, AActor* oth
 }
 
 // Function that sets how many seconds pass before Missiles come back down, in this case its one second
-void AAIMissile::DelayLogic(float deltaTime)
-{
-	//if( !bHasFinishedDelay )
-	//{
-	//	// Delay value + one and then times by deltaTime so its framerate compensated
-	//	fDelayTimer += 1 * deltaTime;
+//void AAIMissile::DelayLogic(float deltaTime)
+//{
+//	//if( !bHasFinishedDelay )
+//	//{
+//	//	// Delay value + one and then times by deltaTime so its framerate compensated
+//	//	fDelayTimer += 1 * deltaTime;
+//
+//	//	if( fDelayTimer > 1.f )
+//	//	{
+//	//		UpdateTarget();
+//	//		this->SetActorEnableCollision(true);
+//	//		bHasFinishedDelay = true;
+//	//	}
+//	//}
+//}
 
-	//	if( fDelayTimer > 1.f )
-	//	{
-	//		UpdateTarget();
-	//		this->SetActorEnableCollision(true);
-	//		bHasFinishedDelay = true;
-	//	}
-	//}
-}
-
-void AAIMissile::UpdateTarget()
-{
-	//if( !bHasTargetPosition )
-	//{
-	//	if( PlayerInWorld != NULL )
-	//	{
-	//		if( PlayerInWorld->IsValidLowLevel() )
-	//		{
-	//			//playerLocation = PlayerInWorld->GetActorLocation() + FMath::FRandRange(-100, 200);
-	//			Target = PlayerInWorld;
-	//			bHasTargetPosition = true;
-	//			bHasNoTarget = false;
-
-	//			//Keep Our Mesh Rotation Offset
-	//			//FRotator rotVal = MissileMesh->GetComponentRotation();
-	//			//rotVal.Roll = 0.f;
-	//			//rotVal.Pitch = -90.f;
-	//			//rotVal.Yaw = 0.f;
-	//			//MissileMesh->SetRelativeRotation(rotVal);
-	//		}
-	//		else
-	//		{
-	//			Target = nullptr;
-	//			bHasTargetPosition = true;
-	//			bHasNoTarget = true;
-	//		}
-	//	}
-	//	else
-	//	{
-	//		Target = nullptr;
-	//		bHasTargetPosition = true;
-	//		bHasNoTarget = true;
-	//	}
-	//}
-}
+//void AAIMissile::UpdateTarget()
+//{
+//	//if( !bHasTargetPosition )
+//	//{
+//	//	if( PlayerInWorld != NULL )
+//	//	{
+//	//		if( PlayerInWorld->IsValidLowLevel() )
+//	//		{
+//	//			//playerLocation = PlayerInWorld->GetActorLocation() + FMath::FRandRange(-100, 200);
+//	//			Target = PlayerInWorld;
+//	//			bHasTargetPosition = true;
+//	//			bHasNoTarget = false;
+//
+//	//			//Keep Our Mesh Rotation Offset
+//	//			//FRotator rotVal = MissileMesh->GetComponentRotation();
+//	//			//rotVal.Roll = 0.f;
+//	//			//rotVal.Pitch = -90.f;
+//	//			//rotVal.Yaw = 0.f;
+//	//			//MissileMesh->SetRelativeRotation(rotVal);
+//	//		}
+//	//		else
+//	//		{
+//	//			Target = nullptr;
+//	//			bHasTargetPosition = true;
+//	//			bHasNoTarget = true;
+//	//		}
+//	//	}
+//	//	else
+//	//	{
+//	//		Target = nullptr;
+//	//		bHasTargetPosition = true;
+//	//		bHasNoTarget = true;
+//	//	}
+//	//}
+//}
 
 void AAIMissile::ImpactParticles()
 {

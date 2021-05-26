@@ -24,7 +24,7 @@ EBTNodeResult::Type UEnableOrDisableMeleeCollision::ExecuteTask(UBehaviorTreeCom
 	{
 		if (ABaseNpc* const NPC = Cast<ABaseNpc>(Cont->GetPawn()))
 		{
-
+			//This function calls the enable or disable melee collision function inside the npc
 			if (ACharacter* const player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0))
 			{
 				NPC->enableOrDisableMeleeCollision();

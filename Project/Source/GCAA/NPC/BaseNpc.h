@@ -35,6 +35,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	//Function to set the spawner (called in the npc spawner itself)
 	void setSpawner(ANpcSpawner* npcSpawnerClass);
 	
 	//Getters
@@ -70,7 +71,9 @@ public:
 
 	void SetRotation(FRotator LookAt);
 
+	//Function to enable or disable melee collision 
 	void enableOrDisableMeleeCollision();
+	
 	//take damage function
 	UFUNCTION()
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser);
@@ -97,8 +100,10 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Combat", meta = (AllowPrivateAccess = "true"))
 	float	attackRange;
 
+	//Attack range default for when the attack range gets temporarily set to 0
 	float	attackRangeDefault;
 
+	//Bibs Damage component
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Components, meta = (AllowPrivateAccess = "true"))
 	class UDamageComponent* DamageableComponent;
 
@@ -128,6 +133,7 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Combat | MeleeCollision", meta = (AllowPrivateAccess = "true"));
 	class UBoxComponent* meleeCollision;
 
+	//npc spawner which is set when the npc is spawned so the spawner is able to track what npc it has spawned
 	ANpcSpawner* npcSpawner;
 
 private:
@@ -141,7 +147,10 @@ private:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "AI | Brain", meta = (AllowPrivateAccess = "true"))
 	UBehaviorTree* BehaviorTree;	
 
+	
 	float startingAttackRange;
+
+	//bool which checks if melee collision is enabled 
 	bool isMeleeCollisionEnabled;
 
 	bool isTargettingPlayer;

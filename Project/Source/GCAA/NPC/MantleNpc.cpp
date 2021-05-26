@@ -1,5 +1,7 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
+//////////////////////////////////
+//		Brandon Middleton		//
+//			MantleNpc			//
+//////////////////////////////////
 
 #include "MantleNpc.h"
 #include "AIBullet.h"
@@ -12,21 +14,20 @@
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundCue.h"
 
+//Consturctor function
 AMantleNpc::AMantleNpc()
 {
-	m_numberOfShots = 5;
 	
+	m_numberOfShots = 5; //Default value for how many bullets the npc should shoot
+	
+	hitObject = false; 	 //Default values for the boolean which was used int he line trace function
+	canCharge = false;	 //Default values for the boolean to say if the npc can charge or not
 
-	bCanDodge = true;
-	fDodgeDistance = 600000.f;
-	fDodgeCooldown = 1.0f;
-	fDodgeStop = 0.1f;
-	traceDistance = 2000.0f;
-	hitObject = false;
-	canCharge = false;
+	minHealthForExplosion = 20.0f; //The amount of health needed to do the explosion attack
+	
+	ChargeDestination = GetActorLocation() + GetActorForwardVector() + 200.0f; //how far the npc should charge
 
-	ChargeDestination = GetActorLocation() + GetActorForwardVector() + 200.0f;
-
+	//Collision defaults 
 	ChargeCollision = CreateDefaultSubobject <UBoxComponent>(TEXT("BoxComponent"));;
 	if (ChargeCollision)
 	{
@@ -35,18 +36,21 @@ AMantleNpc::AMantleNpc()
 		ChargeCollision->SetCollisionProfileName("Trigger");
 	}
 
+	//Sets up the overlap functions 
 	ChargeCollision->OnComponentBeginOverlap.AddDynamic(this, &AMantleNpc::OnOverLapBegin);
 	ChargeCollision->OnComponentEndOverlap.AddDynamic(this, &AMantleNpc::OnOverLapEnd);
-	
+
+	//Not being used but was used for setting up the shield collision
 	ShieldCollider = CreateDefaultSubobject < UBoxComponent>(TEXT("Shield"));;
 	//ShieldCollider->SetCollisionProfileName("BlockAllDynamic");
 	
 }
 
+//Begin play function 
 void AMantleNpc::BeginPlay()
 {
 	AMovingNpc::BeginPlay();
-	//sets the rules for the melee collision box so it is always attatched to a certain socket 
+	//Sets the rules for the melee collision box so it is always attached  to a certain socket 
 	if (ChargeCollision)
 	{
 		FAttachmentTransformRules const rules(EAttachmentRule::SnapToTarget, EAttachmentRule::SnapToTarget, EAttachmentRule::KeepWorld, false);
@@ -57,31 +61,34 @@ void AMantleNpc::BeginPlay()
 	
 }
 
+//Base Attack Function which changes functionality depending on a few factors
 void AMantleNpc::BaseAttack()
 {
-	if (DamageableComponent->Get_Health() >= 20)
+	//If the npcs health is above the minimum health the mantle npc will use a shotgun attack 
+	if (DamageableComponent->Get_Health() >= minHealthForExplosion)
 	{
 		if (canCharge == false)
 		{
 			shotGunAttack();
 		}
-		//GetWorldTimerManager().SetTimer(AttackTimer, this, &AMantleNpc::TimerFunction, 3.0f, false);
+		//GetWorldTimerManager().SetTimer(AttackTimer, this, &AMantleNpc::DisableCollisionTimer, 3.0f, false);
 
-
+		//Enables and disables collision depending on if the mantle can charge or not
 		if (canCharge)
 		{
 			meleeCollision->SetCollisionProfileName("EnemyMelee");
 			meleeCollision->SetNotifyRigidBodyCollision(true);
-
 		}
 	}
-	if (DamageableComponent->Get_Health()<20)
+	
+	//If the enemy is less than the minimum health he will use the explosion attack instead 
+	if (DamageableComponent->Get_Health() < minHealthForExplosion)
 	{
 		explosionAttack();
 	}
-	//chargeAttack();
 }
 
+//Plays a sound effect which is called inside a behaviour tree task 
 void AMantleNpc::playChargeSound()
 {
 	if (ChargeSound)
@@ -91,6 +98,7 @@ void AMantleNpc::playChargeSound()
 	}
 }
 
+//The explosion attack taken from the pyro npc and refactored 
 void AMantleNpc::explosionAttack()
 {
 	if (Explosion)
@@ -101,7 +109,7 @@ void AMantleNpc::explosionAttack()
 		SpawnTransform.SetLocation(GetActorForwardVector() + GetActorLocation());
 
 		FActorSpawnParameters SpawnParams;
-		SpawnParams.Instigator;
+		//SpawnParams.Instigator;
 
 		GetWorld()->SpawnActor <APyroxenesExplosion>(Explosion, SpawnTransform, SpawnParams);
 		ABaseNpc::BaseAttack();
@@ -109,14 +117,15 @@ void AMantleNpc::explosionAttack()
 	}
 }
 
-
-void AMantleNpc::TimerFunction()
+//This function was called on a timer to help disable the collision after the npc has charged
+void AMantleNpc::DisableCollisionTimer()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("STOPPPP drop"));
+	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Orange, TEXT("CollisionStopped"));
 	meleeCollision->SetCollisionProfileName("NoCollision");
 	meleeCollision->SetNotifyRigidBodyCollision(false);
 }
 
+//This function stops all actions of the npc
 void AMantleNpc::StopActions()
 {
 	isActive = false;
@@ -124,6 +133,7 @@ void AMantleNpc::StopActions()
 	GetCharacterMovement()->MaxWalkSpeed = 0.0f;
 }
 
+//Function which allows all actions of the npc
 void AMantleNpc::AllowActions()
 {
 	isActive = true;
@@ -132,7 +142,7 @@ void AMantleNpc::AllowActions()
 }
 
 
-
+//colision functions which are no longer being used 
 void AMantleNpc::OnOverLapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	hitObject = true;
@@ -148,12 +158,13 @@ void AMantleNpc::OnOverLapEnd(UPrimitiveComponent* OverlappedComp, AActor* Other
 };
 
 
-
+//The charge attack function which was going to use the line trace function with some other functionality but has now been cut
 void AMantleNpc::chargeAttack()
 {
 	lineTrace();
 }
 
+//Line trace function  which would have been used to draw a line trace when the npc was charging to help detect where it should go and if it has hit anything 
 void AMantleNpc::lineTrace()
 {
 	FVector Loc;
@@ -187,70 +198,44 @@ void AMantleNpc::lineTrace()
 	}
 }
 
+//This returns the charge distance (this was used inside a behaviour tree task 
 FVector AMantleNpc::getChargeDistance()
 {
 	return ChargeDestination;
 }
 
+//Worked with the line trace to help return a value which was then sent to a behaviour tree task 
 bool AMantleNpc::getHitObject()
 {
 	return hitObject;
 }
 
+//Setter for the hit object boolean
 void AMantleNpc::setHitObject(bool i)
 {
 	hitObject = i;
 }
 
+//Gets the boolean to say if the npc can charge or not
 bool AMantleNpc::getCanCharge()
 {
 	return canCharge;
 }
 
+//Sets the boolean to say if the npc can charge or not
 void AMantleNpc::setCanCharge(bool i)
 {
 	canCharge = i;
 }
 
-void AMantleNpc::stopCharge()
-{
 
-	if (bCanDodge) // If the Player can dodge
-	{
-		//isActive = false;
-		GetCharacterMovement()->BrakingFrictionFactor = 0.0f; // Set BrakingFriction to 0, as we don't want the Player to slow down once they touch ground again
-		// Launches the Player in whichever X or Y axis the Player is facing using DodgeDistance, Both Overrides set to True as we want to replace all velocities
-		LaunchCharacter(FVector(GetActorForwardVector().X, GetActorForwardVector().Y, 0).GetSafeNormal() * fDodgeDistance, true, true);
-		bCanDodge = false; // Set to False as we don't want the Player to be able to dodge before the fDodgeCooldown runs out
-		GetWorldTimerManager().SetTimer(UnusedHandle, this, &AMantleNpc::stopCharge, fDodgeStop, false);
-	}
-	
-	GetCharacterMovement()->StopMovementImmediately();
-	GetCharacterMovement()->BrakingFrictionFactor = 1.0f;
-	// Here we call ResetDodge function then fDodgeCooldown that makes it so the Player can't use dodge again for an amount of time
-	GetWorldTimerManager().SetTimer(UnusedHandle, this, &AMantleNpc::ResetDodge, fDodgeCooldown, false);
-}
-
-
-
-
-void AMantleNpc::ResetDodge()
-{
-	isActive = true;
-	bCanDodge = true; // Player can use Dodge again once fDodgeCooldown is depleted
-}
-
-void AMantleNpc::jumpAttack()
-{
-	
-}
-
+//Says when a attack started in the future I would have liked to add extra functionality 
 void AMantleNpc::AttackStart()
 {
 	ABaseNpc::AttackStart();
-	
 }
 
+//Says when an attack has ended
 void AMantleNpc::AttackEnd()
 {
 	ABaseNpc::AttackEnd();
@@ -258,20 +243,20 @@ void AMantleNpc::AttackEnd()
 }
 
 
-
+//ShotGun attack function
 void AMantleNpc::shotGunAttack()
 {
-	if (BulletBP)
+	if (BulletBP) //Checks to make sure the bullet actor is set inside the blueprint
 	{
-		if (ShootSound)
+		if (ShootSound) //Checks for a sound and if there is one it plays a sound
 		{
 			UGameplayStatics::PlaySoundAtLocation(GetWorld(), ShootSound, GetActorLocation());
 
 		}
-		FVector spacebetween = GetActorRightVector() - 500.0f;
-		FVector viewDirection = GetActorRotation().Vector();
+		FVector spacebetween = GetActorRightVector() - 500.0f; //sets the starting origin for the bullet so it spawns to the side of the npc
+		FVector viewDirection = GetActorRotation().Vector(); // gets which way the npc is facing
 	
-		for (int i = 0; i < m_numberOfShots; i++)
+		for (int i = 0; i < m_numberOfShots; i++) //Gets the amount of bullets and goes through a for loop adjusting the spawn position each time 
 		{
 			FTransform SpawnTransform = GetActorTransform();
 			SpawnTransform.TransformPosition(FVector(0.0f, 0.0f, 100.0f));
@@ -283,16 +268,16 @@ void AMantleNpc::shotGunAttack()
 				GetActorForwardVector().X * 10.0f + GetActorLocation().X + spacebetween.X,
 				GetActorForwardVector().Y * 10.0f + GetActorLocation().Y + spacebetween.Y,
 				GetActorForwardVector().Z * 10.0f + GetActorLocation().Z
-			));
+			)); //Sets where it should spawn 
 
 			FActorSpawnParameters SpawnParams;
-			SpawnParams.Instigator;
+			//SpawnParams.Instigator;
 
-			GetWorld()->SpawnActor <AAIBullet>(BulletBP, SpawnTransform, SpawnParams);
+			GetWorld()->SpawnActor <AAIBullet>(BulletBP, SpawnTransform, SpawnParams); //Spawns the bullet
 
-			spacebetween = spacebetween + 250.0f;
-			ABaseNpc::BaseAttack();
-			StopActions();
+			spacebetween = spacebetween + 250.0f; //Adds onto the space between so each bullet spawns in a new position
+			ABaseNpc::BaseAttack(); //Calls the default base attack function which enables collision and plays a montage if there is one 
+			StopActions(); //Stops the actions so the npc cannot move while shooting 
 		}
 	}
 }

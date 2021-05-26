@@ -3,7 +3,7 @@
 
 #include "BaseNpc.h"
 
-#include <xlocmon>
+
 
 
 #include "NavigationSystem.h"
@@ -30,7 +30,7 @@ ABaseNpc::ABaseNpc()
 	PrimaryActorTick.bCanEverTick = true;
 
 
-	// Create the damage component.
+	// Creates the damage component.
 	DamageableComponent = CreateDefaultSubobject<UDamageComponent>(TEXT("Damage Component"));
 	
 	//stats
@@ -182,15 +182,20 @@ float ABaseNpc::getAttackRange() const
 	return attackRange;
 }
 
+
 void ABaseNpc::VOnDeath()
+
 {
-	//
+	//Sets the controller
 	AController* CurrentController = GetController();
+
+	//Sets the amount of enemies alive in the npc spawner and also checks to see if the next wave can be spawned
 	if (npcSpawner)
 	{
-		npcSpawner->setenemiesAlive(npcSpawner->getEnemiesAlive() - 1);
+		npcSpawner->setEnemiesAlive(npcSpawner->getEnemiesAlive() - 1);
 		npcSpawner->checkIfnextWave();
 	}
+	
 	if (CurrentController != nullptr) {
 		// Stop movement so the death animation plays immediately
 		CurrentController->StopMovement();
@@ -209,6 +214,7 @@ void ABaseNpc::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 }
 
+//Enables or disables the melee collision bool  and also calls the attack start or end function depending on what the bool is currently set as 
 void ABaseNpc::enableOrDisableMeleeCollision()
 {
 	if(isMeleeCollisionEnabled == true)
@@ -249,6 +255,9 @@ UBehaviorTree* ABaseNpc::GetBehaviorTree() const
 
 
 //sets the collision profiles which enables it to deal damage
+//These are in separate functions to the enable and disable melee
+//collision because sometimes a specific action needs to be called
+
 void ABaseNpc::AttackStart()
 {
 	meleeCollision->SetCollisionProfileName("EnemyMelee");
@@ -262,25 +271,21 @@ void ABaseNpc::AttackEnd()
 	meleeCollision->SetNotifyRigidBodyCollision(false);
 }
 
+//Sets the actors status to false and sets its attack range to 0 (no movement is effected in this class
+//because the base npc has no movement ability and it is disabled inside the overridden stop actions function
+// in the moving npc class 
 void ABaseNpc::StopActions()
 {
-	//GetController()->UnPossess();
 	isActive = false;
 	attackRange = 0.0f;
-	//BehaviorTreeComponent->StopTree(EBTStopMode::Safe);
-	//BehaviorTreeComponent->StopTree(EBTStopMode::Safe);
-		
-	// run the behavior tree
-	//BehaviorTreeComponent->StartTree(BehaviorTree);
-	//BehaviorTree->BlackboardAsset;
-
 }
 
+//Sets the actors isActive bool to true and resets the attack range
+//no movement is affected in this because that is all handled in the moving npc class
 void ABaseNpc::AllowActions()
 {
 	isActive = true;
 	attackRange = attackRangeDefault;
-	//GetController()->Possess(this);
 
 }
 
@@ -299,7 +304,8 @@ void ABaseNpc::SetRotation(FRotator LookAt)
 	SetActorRotation(LookAt);
 }
 
-//applies damage to the npc
+//applies damage to the npc using bibs damage component
+// old code was commented out because it wasnt needed due to the damage component 
 float ABaseNpc::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
 {
 	
@@ -323,7 +329,8 @@ float ABaseNpc::TakeDamage(float DamageAmount, struct FDamageEvent const& Damage
 	return DamageAmount;
 }
 
-//deals if it hits the player when the function is called, right now for testing purposes the npcs are able to hurt each other
+//deals if it hits the player when the function is called
+// Using the new damage component 
 void ABaseNpc::onAttackOverlapBegin(UPrimitiveComponent* const OverlappedComponent, AActor* const HitActor, UPrimitiveComponent* OtherComponent, int const BodyIndex, bool const FromSweep, FHitResult const& SweepResult)
 {
 	
@@ -335,15 +342,6 @@ void ABaseNpc::onAttackOverlapBegin(UPrimitiveComponent* const OverlappedCompone
 			pDmgComp->ReceiveDamage(damageAmount);
 		}
 	}
-	//
-	//if (ABaseNpc* const friendly = Cast <ABaseNpc>(HitActor))
-	//{
-	//	UDamageComponent* pDmgComp = HitActor->FindComponentByClass<UDamageComponent>();
-	//	if (pDmgComp)
-	//	{
-	//		pDmgComp->ReceiveDamage(damageAmount);
-	//	}
-	//}
 }
 
 void ABaseNpc::onAttackOverlapEnd(UPrimitiveComponent* const OverlappedComponent, AActor* const HitActor, UPrimitiveComponent* OtherComponent, int const BodyIndex)

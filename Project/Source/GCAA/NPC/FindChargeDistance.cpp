@@ -25,20 +25,12 @@ EBTNodeResult::Type UFindChargeDistance::ExecuteTask(UBehaviorTreeComponent& Own
 		{
 			if (AMantleNpc* const NPC = Cast<AMantleNpc>(controller->GetPawn()))
 			{
+				//Gets the players location and the forward vector and then sets the target move to position to be behind the player so the NPC will charge Behind the player
 				controller->GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), player->GetActorLocation() + (player->GetActorForwardVector() * -200));
 
+				//Plays a sound while charging 
 				NPC->playChargeSound();
 				FNavLocation location;
-
-				//if (UNavigationSystemV1* const nav_system = UNavigationSystemV1::GetCurrent(GetWorld()))
-				//{
-				//	if (nav_system->GetRandomPointInNavigableRadius(player->GetActorLocation() + (NPC->GetActorForwardVector() + 200), 100, location, nullptr))
-				//	{
-				//		controller->GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), location.Location);
-
-				//	}
-				//}
-
 				FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
 				return EBTNodeResult::Succeeded;
 			}

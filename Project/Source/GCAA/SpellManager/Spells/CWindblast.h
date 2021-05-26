@@ -31,9 +31,9 @@ public:
 	void FireWindblast();
 
 	// Setters
-	FORCEINLINE void SetSpellManager	( ASpellManager*			pSpellManager	);				// The spell manager.	_deprecated_ 
-	FORCEINLINE void SetPlayer			( ACPlayer*					pPlayer			);				// The player.			_deprecated_ 
-	FORCEINLINE void SetStats			( FWindBlastStatsStruct		sStats			);				// The stats of this spell.
+	void SetSpellManager	( ASpellManager*			pSpellManager	);				// The spell manager.	_deprecated_ 
+	void SetPlayer			( ACPlayer*					pPlayer			);				// The player.			_deprecated_ 
+	void SetStats			( FWindBlastStatsStruct		sStats			);				// The stats of this spell.
 
 	// Tick (Update) Override - Used exclusively for the timeline.
 	virtual void Tick		( float						DeltaTime		) override;

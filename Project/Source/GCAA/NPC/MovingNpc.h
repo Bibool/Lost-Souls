@@ -20,9 +20,12 @@ public:
 	AMovingNpc();
 	virtual void BaseAttack() override;
 	virtual void BeginPlay() override;
+
+
 	virtual void VOnDeath() override;
-	float getWalkSpeed()const;
-	float getRunSpeed() const;
+	float getWalkSpeed()const; //For when the stop action function is called
+	float getRunSpeed() const; //For when the stop action function is called
+
 	//patrol path
 	TSubclassOf<APatrolPath> getPatrolPathClass(); //default patrol path class
 	APatrolPath* GetPatrolPath(); //patrol path which is set to follow 

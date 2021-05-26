@@ -22,9 +22,6 @@ class GCAA_API AAIBullet : public AActor
 	GENERATED_BODY()
 
 private:
-	// Players current location
-	//FVector		playerLocation;
-
 	// Function to set the collision.
 	UFUNCTION()
 	void	OnOverlapBegin(UPrimitiveComponent* overlappedComp, AActor* otherActor, UPrimitiveComponent* otherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& hitResult);
@@ -52,33 +49,18 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	//UFUNCTION()
-		//void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
-
 	// Sphere collision component for the Bullet
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Collision", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Collision)
 	class USphereComponent* CollisionComponent;
 
 	// Projectile movement component for the Bullet
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement)
 	class UProjectileMovementComponent* ProjectileMovementComponent;
-
-	// Projectile mesh for the Bullet
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(VisibleDefaultsOnly, BlueprintReadOnly, Category = Mesh)
-		//UStaticMeshComponent*			ProjectileMeshComponent;
 
 	// Sets particle effect on Collision
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Particles", meta = ( AllowPrivateAccess = "true" ));
-	//UPROPERTY(EditDefaultsOnly, Category = "Particles")
 	class UParticleSystem* ExplosionSystem;
 
 	// Function to call the particle effect on impact
 	class UParticleSystemComponent* PlayExplosion(class UParticleSystem* explosion);
-
-	//// Getters and Setters for the FindPlayerLocation task in Behaviour Tree
-	//FVector getTargetLocation() { return playerLocation; }
-	//void	setTargetLocation	(FVector i) { playerLocation = i; }
 };

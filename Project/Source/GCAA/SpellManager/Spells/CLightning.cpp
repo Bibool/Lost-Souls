@@ -176,7 +176,7 @@ void ACLightning::DelayedRecursiveCall()
 	
 	if ( UDamageComponent* pDamageComp = m_pcCurrentTarget->FindComponentByClass<UDamageComponent>() )
 	{
-		if ( m_sStats.VFX_On_Hit) const UParticleSystemComponent* pHitFX = UGameplayStatics::SpawnEmitterAtLocation( GetWorld(), m_sStats.VFX_On_Hit, pDamageComp->GetOwner()->GetActorLocation(), FRotator::ZeroRotator, FVector(1,1,1), true );
+		if ( m_sStats.VFX_On_Hit) UGameplayStatics::SpawnEmitterAtLocation( GetWorld(), m_sStats.VFX_On_Hit, pDamageComp->GetOwner()->GetActorLocation(), FRotator::ZeroRotator, FVector(1,1,1), true );
 		pDamageComp->ReceiveDamage( m_sStats.Fork_Damage );
 	}
 	

@@ -58,53 +58,53 @@ void AErosionEnemy::Tick(float DeltaTime)
 void AErosionEnemy::SpawnMissile()
 {
 	//if( bCanUseMissile )
+	//{
+	// Missile position above Enemy
+	vMissilePosition = GetActorRightVector() - 350;
+	vMissilePosition2 = GetActorRightVector() - 350;
+
+	if( MissileClass != NULL )
 	{
-		vMissileDistance = GetActorRightVector() - 350;
-		vMissileDistance2 = GetActorRightVector() - 350;
-
-		if( MissileClass != NULL )
+		class UWorld* const world = GetWorld();
+		if( world != NULL )
 		{
-			class UWorld* const world = GetWorld();
-			if( world != NULL )
+			for( int i = 0; i < iNumberOfMissiles; i++ )
 			{
-				for( int i = 0; i < iNumberOfMissiles; i++ )
+				FVector vCurrentPos = FVector(GetActorLocation().X + vMissilePosition.X, GetActorLocation().Y + vMissilePosition.Y + 200, GetActorLocation().Z);
+				FRotator rCurrentRot = FRotator(0, 0, 0);
+
+				FActorSpawnParameters spawnParams;
+				spawnParams.Owner = this;
+
+				class AAIMissile* FiredMissile = world->SpawnActor<AAIMissile>(MissileClass, vCurrentPos, rCurrentRot, spawnParams);
+
+				vMissilePosition = vMissilePosition + ( GetActorRightVector() + 130 );
+
+				for( int j = 0; j < 1; j++ )
 				{
-					FVector vCurrentPos = FVector(GetActorLocation().X + vMissileDistance.X, GetActorLocation().Y + vMissileDistance.Y, GetActorLocation().Z);
-					FRotator rCurrentRot = FRotator(0, 0, 0);
+					FVector currentPosition = FVector(GetActorLocation().X + vMissilePosition2.X, GetActorLocation().Y + vMissilePosition2.Y + 500, GetActorLocation().Z);
+					FRotator currentRotation = FRotator(0, 0, 0);
 
-					FActorSpawnParameters spawnParams;
-					spawnParams.Owner = this;
+					FActorSpawnParameters spawnParamss;
+					spawnParamss.Owner = this;
 
-					class AAIMissile* FiredMissile = world->SpawnActor<AAIMissile>(MissileClass, vCurrentPos, rCurrentRot, spawnParams);
+					class AAIMissile* FiredMissiles = world->SpawnActor<AAIMissile>(MissileClass, currentPosition, currentRotation, spawnParamss);
 
-					vMissileDistance = vMissileDistance + ( GetActorRightVector() + 130 );
+					vMissilePosition2 = vMissilePosition2 + ( GetActorRightVector() + 130 );
 
-					for( int j = 0; j < 1; j++ )
-					{
-						FVector currentPosition = FVector(GetActorLocation().Y + vMissileDistance2.Y, GetActorLocation().X + vMissileDistance2.X, GetActorLocation().Z);
-						FRotator currentRotation = FRotator(0, 0, 0);
+					//FiredMissile->setTargetLocation(FiredMissile->GetTargetLocation() + FMath::FRandRange (-100, 200));
 
-						FActorSpawnParameters spawnParamss;
-						spawnParamss.Owner = this;
-
-						class AAIMissile* FiredMissiles = world->SpawnActor<AAIMissile>(MissileClass, currentPosition, currentRotation, spawnParamss);
-
-						vMissileDistance2 = vMissileDistance2 + ( GetActorRightVector() + 130 );
-
-						//FiredMissile->setTargetLocation(FiredMissile->GetTargetLocation() + FMath::FRandRange (-100, 200));
-
-						//if( FiredMissile != nullptr )
-						//{
-						//	// Set Mesh Rotation Offset
-						//	FRotator meshRot = FiredMissile->MissileMesh->GetComponentRotation();
-						//	meshRot.Roll = 0.f;
-						//	meshRot.Pitch = -90.f;
-						//	meshRot.Yaw = 0.f;
-						//	FiredMissile->MissileMesh->SetRelativeRotation(meshRot);
-						//}
-						//bCanUseMissile = false;
-						//GetWorldTimerManager().SetTimer(UnusedHandle, this, &AErosionEnemy::StopSpawningMissile, fMissileStop, false);
-					}
+					//if( FiredMissile != nullptr )
+					//{
+					//	// Set Mesh Rotation Offset
+					//	FRotator meshRot = FiredMissile->MissileMesh->GetComponentRotation();
+					//	meshRot.Roll = 0.f;
+					//	meshRot.Pitch = -90.f;
+					//	meshRot.Yaw = 0.f;
+					//	FiredMissile->MissileMesh->SetRelativeRotation(meshRot);
+					//}
+					//bCanUseMissile = false;
+					//GetWorldTimerManager().SetTimer(UnusedHandle, this, &AErosionEnemy::StopSpawningMissile, fMissileStop, false);
 				}
 			}
 		}

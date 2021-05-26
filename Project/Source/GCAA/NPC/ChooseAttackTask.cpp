@@ -24,7 +24,7 @@ EBTNodeResult::Type UChooseAttackTask::ExecuteTask(UBehaviorTreeComponent& Owner
 	{
 		if (ABaseNpc* const NPC = Cast<ABaseNpc>(Cont->GetPawn()))
 		{
-			
+			//Chooses an attack by getting an attack range and then setting a blackboard variable to match which option should be picked
 			if (ACharacter* const player = UGameplayStatics::GetPlayerCharacter(GetWorld(), 0))
 			{
 				if (NPC->GetDistanceTo(player) < NPC->getAttackRange())
