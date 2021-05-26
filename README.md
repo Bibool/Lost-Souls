@@ -11,7 +11,7 @@ The team includes the following:
    Mia,  
    Brandon,  
    Kahina,  
-   Bib (Myself). (Spell casting, Target lock, Spells, Damage Component, Player UI)
+   Bib (Myself). (Spell casting, Target lock, Spells, Damage Component, Player UI, Android Port)
   
   Find the attribution table here:
   
@@ -20,6 +20,8 @@ The team includes the following:
   To build the project, it will require this additional file to be placed in Content/movies:
   
   https://drive.google.com/file/d/1k5th9mKBbrKG74243zj76ahq-8a58Bll/
+  
+  Two builds are available: 1) PC (final) , 2) Android (WIP)
   
   
  Designers:
